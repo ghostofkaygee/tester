@@ -1,0 +1,246 @@
+/* styles.css */
+
+/* General reset and body styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+.header {
+    background-color: #8B4513; /* Light brown */
+    color: white;
+    padding: 10px 20px; /* Increased padding for better spacing */
+    display: flex;
+    justify-content: space-between; /* Align items at each end of the header */
+    align-items: center; /* Center items vertically */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold; /* Added bold font weight */
+}
+
+nav {
+    text-align: right; /* Align navigation links to the right */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display flex to make items horizontal */
+}
+
+nav ul li {
+    margin-left: 20px; /* Adjusted margin between list items */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Remove margin from the first list item */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block; /* Ensure links are block-level elements */
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #8B4513; /* Light brown */
+    min-width: 120px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dashboard styles */
+.dashboard {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff; /* White */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8B4513; /* Light brown */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+.profile-picture:hover .upload-btn {
+    display: block; /* Show on hover */
+}
+
+.accounts-container,
+.transactions,
+.deposits,
+.transactions {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Sliders */
+.accounts-slider,
+.transactions-slider,
+.deposits-slider,
+.transactions-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    margin-bottom: 20px;
+}
+
+.account,
+.transfer,
+.deposit,
+.transactions {
+    flex: 0 0 auto;
+    width: calc(100% - 20px); /* Adjusted width for spacing between slides */
+    min-width: 300px; /* Minimum width of each slide */
+    background-color: #333; /* Black */
+    color: white;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 20px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease-in-out;
+}
+
+.account h3,
+.transfer h3,
+.deposit h3,
+.transactions h3, {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.balance {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Links inside slides */
+.transfer-link,
+.deposit-link,
+.transactionshistory-link{
+    display: block;
+    margin-top: 10px;
+    color: #8B4513; /* Light brown */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.transfer-link:hover,
+.deposit-link:hover,
+.transactionshistory-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px; /* Decrease padding for smaller screens */
+    }
+
+    .header h1 {
+        margin-bottom: 10px; /* Add margin below h1 for spacing */
+        text-align: center; /* Center h1 text */
+    }
+
+    nav {
+        text-align: center; /* Center navigation links */
+        margin-top: 10px; /* Add margin above navigation */
+    }
+
+    nav ul {
+        flex-direction: row; /* Display items horizontally for smaller screens */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    nav ul li {
+        margin-left: 20px; /* Adjusted margin between list items */
+    }
+
+    nav ul li:first-child {
+        margin-left: 0; /* Remove margin from the first list item */
+    }
+}
